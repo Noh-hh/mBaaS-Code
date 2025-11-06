@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design AI</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <h1 class="logo"><img src="images/logo.png" alt="컨빌 디자인 AI 맞춤형 인테리어 제작 솔루션"></h1>
+            <img src="images/bg_head01.png" alt="AI" class="bg01">
+            <img src="images/bg_head02.png" alt="Convil Design" class="bg02">
+        </header>
+        <!-- header end-->
+        <section class="content">
+            <div class="cont_wrap">
+                <h2>AI 리포트</h2>
+                <ul class="step_box">
+                    <li class="on"><!-- 사용자가 작성하는 STEP별로 on클래서 활성화 -->
+                        <p class="icon"><img src="images/ico_step1.png" alt="step1.기본정보입력"></p>
+                        <p><span>STEP 1</span>기본정보입력</p>
+                    </li>
+                    <li>
+                        <p class="icon"><img src="images/ico_step3.png" alt="step2.참고요청사항"></p>
+                        <p><span>STEP 2</span>참고요청사항</p>
+                    </li>
+                    <li>
+                        <p class="icon"><img src="images/ico_step2.png" alt="step3.디자인정보입력"></p>
+                        <p><span>STEP 3</span>디자인정보입력</p>
+                    </li>
+                </ul>
+                <div class="component_box">
+                    <!-- STEP 1. 기본정보입력시작 -->
+                    <div class="form on"><!-- 사용자가 작성하는 STEP별로 on클래서 활성화 -->
+                        <div class="subject">
+                            <p>
+                            <span class="num">1</span><span>기본정보</span>
+                            </p>
+                        </div>
+                        <div class="info">
+                            <ul>
+                                <li>
+                                    <div><label for="username">고객명<span class="required" aria-label="required">*</span></label>
+                                    <input id="username" type="text" name="username" autocomplete="username" placeholder="고객명을 입력해주세요." required /></div>
+                                </li>
+                                <li class="two">
+                                    <div><label for="email">고객 이메일<span class="required" aria-label="required">*</span></label>
+                                    <input id="email" type="text" name="email" autocomplete="email" placeholder="고객의 메일주소를 입력해주세요." required /></div>
+                                    <div><label for="number">고객 연락처<span class="required" aria-label="required">*</span></label>
+                                    <input id="number" type="text" name="number" autocomplete="number" placeholder="-를 제외하고 입력해주세요." required /></div>
+                                </li>
+                                <li>
+                                    <div><label for="info01">공간용도<span class="required" aria-label="required">*</span></label>
+                                    <textarea id="info01" placeholder="이 공간의 용도는 무엇인가요? &#40;예시 - 카페 인테리어, 아파트 인테리어, 헬스장, 미용실 등&#41;"></textarea>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <legend>요청범위<span class="required" aria-label="required">*</span></legend>
+                                        <fieldset>
+                                            <div>
+                                                <input type="radio" id="op1" name="shipping" value="op1">
+                                                <label for="op1"><span class="radio"></span><span class="text">외관 디자인</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="op2" name="shipping" value="op2">
+                                                <label for="op2"><span class="radio"></span><span class="text">내부 홀</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="op3" name="shipping" value="op3">
+                                                <label for="op3"><span class="radio"></span><span class="text">독립 룸</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="op4" name="shipping" value="op4">
+                                                <label for="op4"><span class="radio"></span><span class="text">화장실</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="op5" name="shipping" value="op5">
+                                                <label for="op5"><span class="radio"></span><span class="text">카운터</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="op6" name="shipping" value="op6">
+                                                <label for="op6"><span class="radio"></span><span class="text">키친 &#40;주방&#41;</span></label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 요청 범위에서 외부파사드 선택 시 작성할 수 있도록 뜸 -->
+                    <div class="form">
+                        <div class="subject">
+                            <p>
+                            <span class="num">+</span><span>외부 디자인 &#40;선택 시&#41;</span>
+                            </p>
+                        </div>
+                        <div class="info">
+                            <ul>
+                                <li>
+                                    <div>
+                                        <label for="file">현장 이미지 업로드</label>
+                                        <p>현장 정면 이미지를 업로드해주세요. &#40;최대 3장까지 업로드 가능합니다.&#41;</p>
+                                        <!-- 최대 3장까지 입력되도록 해주세요. -->
+                                        <input type="file" id="file" name="file" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><label for="info08">간판 문구</label>
+                                    <textarea id="info08" placeholder="간판에 들어갈 텍스트 및 폰트를 선택하시고, 색상 레퍼런스 선택해주세요."></textarea>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><label for="info09">외벽 재료<span class="required" aria-label="required">*</span></label>
+                                    <textarea id="info09" placeholder="외벽 마감에 사용할 재료는 무엇인가요? &#40;예시 - 벽돌, 스타코, 목재 등&#41;"></textarea>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><label for="info10">간판 타입</label>
+                                    <textarea id="info10" placeholder="어닝, 채널간판, 천갈이간판 등"></textarea>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><label for="info11">색상<span class="required" aria-label="required">*</span></label>
+                                    <textarea id="info11" placeholder="선호하시는 색상을 알려주세요."></textarea>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <label for="file">외관 레퍼런스 참고용 이미지 업로드</label>
+                                        <p>외관 레퍼런스 이미지를 업로드해주세요.</p>
+                                        <!-- 1장 업로드-->
+                                        <input type="file" id="file" name="file" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- STEP 1. 기본정보입력 끝 -->
+                </div>
+                
+                <div class="btn_area">
+                    <button class="btn prev">저장 후 이전단계로 이동</button>
+                    <button class="btn next">저장 후 다음단계로 이동</button>
+                </div>
+
+                <!-- STEP 2. 참고사항입력 시작 -->
+                <div class="component_box">
+                    <div class="form">
+                        <div class="subject">
+                            <p>
+                            <span class="num">2</span><span>실측 및 구조정보</span>
+                            </p>
+                        </div>
+                        <div class="info">
+                            <ul>
+                                <li>
+                                    <div class="in_three">
+                                        <legend>평면치수 &#40;단위 mm로 입력&#41;<span class="required" aria-label="required">*</span></legend>
+                                        <fieldset>
+                                            <div>
+                                                <label for="size1">가로</label>
+                                                <input type="text" id="size1" name="size1" placeholder="mm" required>
+                                            </div>
+                                            
+                                            <div>
+                                                <label for="size2">세로</label>
+                                                <input type="text" id="size2" name="size2" placeholder="mm" required>
+                                            </div>
+                                            
+                                            <div>
+                                                <label for="size3">층고 높이</label>
+                                                <input type="text" id="size3" name="size3" placeholder="mm" required>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <label for="file">스케치도면 업로드 &#40;손스케치, 실측 , 도면 모두 가능&#41;<span class="required" aria-label="required">*</span></label>
+                                        <input type="file" id="file" name="file" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <legend>입구 및 창 위치<span class="required" aria-label="required">*</span></legend>
+                                        <fieldset>
+                                            <div>
+                                                <input type="checkbox" id="ck1" name="shipping" value="ck1">
+                                                <label for="ck1"><span class="check"></span><span class="text">정면 우측</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="ck2" name="shipping" value="ck2">
+                                                <label for="ck2"><span class="check"></span><span class="text">정면 좌측</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="ck3" name="shipping" value="ck3">
+                                                <label for="ck3"><span class="check"></span><span class="text">정면 중간</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="ck4" name="shipping" value="ck4">
+                                                <label for="ck4"><span class="check"></span><span class="text">정면에 없음</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="ck5" name="shipping" value="ck5">
+                                                <label for="ck5"><span class="check"></span><span class="text">기타</span></label>
+                                                <input type="text" placeholder="기타 사항 작성"><!-- 기타가 선택 됐을 때 활성화 -->
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <label for="file">현장사진 업로드</label>
+                                        <!-- 1장 -->
+                                        <p>현장 사진이 있다면 업로드해주세요.</p>
+                                        <input type="file" id="file" name="file" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <label for="file">기둥/벽체 고정 구조</label> 
+                                        <!-- 1장 -->
+                                        <p>시공 불가능한 구조물&#40;기둥/벽체 등&#41;이 있다면 공간의 사진을 첨부해주세요.</p>
+                                        <input type="file" id="file" name="file" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><label for="info02">분전함/급배수 참고위치</label>
+                                    <textarea id="info02" placeholder="설비 위치를 공유해 주세요. &#40;없을 경우 생략&#41;"></textarea>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="subject">
+                            <p>
+                            <span class="num">3</span><span>가구 및 배치 정보</span>
+                            </p>
+                        </div>
+                        <div class="info">
+                            <ul>
+                                <li>
+                                    <div><label for="info03">원하시는 가구 구성<span class="required" aria-label="required">*</span></label>
+                                    <textarea id="info03" placeholder="원하시는 가구 구성을 작성해주세요. &#40;예시 - 테이블 4개, 바테이블 1개 등&#41;"></textarea>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <label for="file">가구 스타일 참고 이미지 업로드</label>
+                                        <p>원하시는 스타일이 담긴 가구 이미지가 있다면 업로드해주세요.</p>
+                                        <input type="file" id="file" name="file" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><label for="info04">수용인원<span class="required" aria-label="required">*</span></label>
+                                    <textarea id="info04" placeholder="예상 고객 좌석 수 또는 테이블 수를 작성해주세요."></textarea>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="subject">
+                            <p>
+                            <span class="num">4</span><span>기타 요청사항</span>
+                            </p>
+                        </div>
+                        <div class="info">
+                            <ul>
+                                <li>
+                                    <div><label for="info12">특이 요청사항</label>
+                                    <textarea id="info12" placeholder="고객의 취향, 의도, 상징요소가 있다면 알려주세요."></textarea>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><label for="info13">시공예산 범위</label>
+                                    <textarea id="info13" placeholder="참고 예산이 있다면 입력해주세요. &#40;선택사항&#41;"></textarea>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><label for="info14">예산 우선순위</label>
+                                    <textarea id="info14" placeholder="예산이 한정적일 경우, 가장 우선적으로 투자하고 싶은 공간이나 요소를 알려주세요."></textarea>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- STEP 2. 참고사항입력 끝 -->
+
+
+                <div class="btn_area">
+                    <button class="btn prev">저장 후 이전단계로 이동</button>
+                    <button class="btn next">저장 후 다음단계로 이동</button>
+                </div>
+
+
+                <!-- STEP 3. 디자인 정보 입력 시작 -->
+                <div class="component_box">
+                    <div class="form">
+                        <div class="subject">
+                            <p>
+                            <span class="num">5</span><span>디자인 콘셉트</span>
+                            </p>
+                        </div>
+                        <div class="info">
+                            <ul>
+                                <li>
+                                    <div><label for="info05">전체 분위기<span class="required" aria-label="required">*</span></label>
+                                    <textarea id="info05" placeholder="공간에서 원하는 분위기는 어떤가요? &#40;예시 - 따뜻함, 모던, 빈티지 등&#41;"></textarea>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <label for="file">전체 공간 무드/레퍼런스 이미지 업로드</label>
+                                        <p>원하시는 공간 무드/레퍼런스 이미지가 있다면 업로드해주세요.</p>
+                                        <input type="file" id="file" name="file" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <legend>벽 마감재 느낌<span class="required" aria-label="required">*</span></legend>
+                                        <fieldset>
+                                            <div>
+                                                <input type="checkbox" id="w_ck1" name="shipping" value="w_ck1">
+                                                <label for="w_ck1"><span class="check"></span><span class="text">스타코</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="w_ck2" name="shipping" value="w_ck2">
+                                                <label for="w_ck2"><span class="check"></span><span class="text">벽돌</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="w_ck3" name="shipping" value="w_ck3">
+                                                <label for="w_ck3"><span class="check"></span><span class="text">페인트</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="w_ck4" name="shipping" value="w_ck4">
+                                                <label for="w_ck4"><span class="check"></span><span class="text">타일</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="w_ck5" name="shipping" value="w_ck5">
+                                                <label for="w_ck5"><span class="check"></span><span class="text">도장</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="w_ck6" name="shipping" value="w_ck6">
+                                                <label for="w_ck6"><span class="check"></span><span class="text">유럽미장</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="w_ck7" name="shipping" value="w_ck7">
+                                                <label for="w_ck7"><span class="check"></span><span class="text">기타</span></label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <label for="file">벽 마감재 재질/톤/마감 이미지 업로드</label>
+                                        <p>원하시는 벽 마감재 재질/톤/마감 이미지가 있다면 업로드해주세요.</p>
+                                        <input type="file" id="file" name="file" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <legend>바닥 마감재 느낌<span class="required" aria-label="required">*</span></legend>
+                                        <fieldset>
+                                            <div>
+                                                <input type="checkbox" id="f_ck1" name="shipping" value="f_ck1">
+                                                <label for="f_ck1"><span class="check"></span><span class="text">타일</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="f_ck2" name="shipping" value="f_ck2">
+                                                <label for="f_ck2"><span class="check"></span><span class="text">에폭시</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="f_ck3" name="shipping" value="f_ck3">
+                                                <label for="f_ck3"><span class="check"></span><span class="text">장판</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="f_ck4" name="shipping" value="f_ck4">
+                                                <label for="f_ck4"><span class="check"></span><span class="text">강화마루/강마루</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="f_ck5" name="shipping" value="f_ck5">
+                                                <label for="f_ck5"><span class="check"></span><span class="text">대리석</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="f_ck6" name="shipping" value="f_ck6">
+                                                <label for="f_ck6"><span class="check"></span><span class="text">기타</span></label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <label for="file">바닥 마감재 재질/톤/마감 이미지 업로드</label>
+                                        <p>원하시는 바닥 마감재 재질/톤/마감 이미지가 있다면 업로드해주세요.</p>
+                                        <input type="file" id="file" name="file" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><label for="info06">조명 밝기<span class="required" aria-label="required">*</span></label>
+                                    <textarea id="info06" placeholder="원하는 조명 밝기를 알려주세요."></textarea>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <label for="file">전조명 밝기 레퍼런스 이미지 업로드</label>
+                                        <p>원하시는 조명 밝기 레퍼런스 이미지가 있다면 업로드해주세요.</p>
+                                        <input type="file" id="file" name="file" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><label for="info07">조명 종류</label>
+                                    <textarea id="info07" placeholder="원하는 조명 종류를 알려주세요. &#40;예시 - 펜던트, 레일조명, 벽등 등&#41;"></textarea>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <legend>3D시안 이미지 비율</legend>
+                                        <fieldset>
+                                            <div>
+                                                <input type="checkbox" id="r_ck1" name="f_ck1" value="r_ck1">
+                                                <label for="r_ck1"><span class="check"></span><span class="text">4:5</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="r_ck2" name="shipping" value="r_ck2">
+                                                <label for="r_ck2"><span class="check"></span><span class="text">16:9</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="r_ck3" name="shipping" value="r_ck3">
+                                                <label for="r_ck3"><span class="check"></span><span class="text">1:1</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="r_ck4" name="shipping" value="r_ck4">
+                                                <label for="r_ck4"><span class="check"></span><span class="text">9:16</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="r_ck5" name="shipping" value="r_ck5">
+                                                <label for="r_ck5"><span class="check"></span><span class="text">2:1</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="r_ck6" name="shipping" value="r_ck6">
+                                                <label for="r_ck6"><span class="check"></span><span class="text">4:3</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="r_ck7" name="shipping" value="r_ck7">
+                                                <label for="r_ck7"><span class="check"></span><span class="text">3:2</span></label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="r_ck8" name="shipping" value="r_ck8">
+                                                <label for="r_ck7"><span class="check"></span><span class="text">기타</span></label>
+                                                <input type="text" placeholder="기타사항 작성"><!-- 기타가 선택 됐을 때 활성화 -->
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- STEP 3. 디자인 정보 입력 끝 -->
+
+                <div class="btn_area center">
+                    <button class="btn save">이미지 생성하기</button>
+                </div>
+
+                <!-- 질문 타임 -->
+                <div class="chat_box">
+                    <div class="chat_inner">
+                        <div class="ai_chat_box">
+                            <img src="images/ex_img01.png" alt="1차 생성된 이미지">
+                            <span class="ai"><img src="images/ico_ai.png" alt="ai 아이콘"></span>
+                            <div class="chat"><p>작성해주신 요청서 기반으로 이미지를 생성했습니다.<br> 추가 요청 사항이 있으신가요?</p></div>
+                        </div>
+                        <div class="user_chat_box">
+                            <img src="images/ex_add_img.png" alt="사용자가 첨부한 이미지">
+                            <div class="chat"><p>이 공간의 넓이감을 학습해서 다시 생성해봐. 천장 구조물은 빨간색 1,2 빼고 뾰족하게 해줘. 그리고 샹들리에는 빼고 다른 조명으로 만들어줘.</p></div>
+                        </div>
+                        <div class="ai_chat_box">
+                            <img src="images/ex_img02.png" alt="최종 생성된 이미지">
+                            <span class="ai"><img src="images/ico_ai.png" alt="ai 아이콘"></span>
+                            <div class="chat"><p>최종 생성된 이미지 입니다.<br> 마음에 드십니까?</p></div>
+                            <div class="answer">
+                                <button class="btn">예</button>
+                                <button class="btn on">아니오</button>
+                            </div>
+                            <div class="chat"><p>아니오. 를 선택하셨습니다. <br>새로 이미지를 생성하기 위하여. <br>추가 질문을 드리겠습니다.</p></div>
+                            <div class="chat"><p>모던 스타일을 선호하신다고 하셨는데, 구체적으로 어떤 소재나 마감재를 좋아하시나요?</p></div>
+                        </div>
+                    </div>
+
+                    <div class="user_chat">
+                        <div class="btn_box"><button class="btn add">참고 이미지 추가</button></div>
+                        <label for="chat01" class="hide">사용자 요청 채팅</label>
+                        <textarea id="chat01" placeholder="요청사항을 입력해주세요."></textarea>
+                        <div class="btn_box right"><button class="btn create">이미지 생성</button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- content end-->
+        <footer>
+            <div class="footer width">
+                <div class="foot_top">
+                    <a href="https://convil.net" class="foot_logo" target="_blank"><img src="https://convil.net/theme/nero/img/flogo.png" alt="" title=""></a>
+                </div>
+                <div class="foot_info_wrap">
+                    <div class="foot_info">
+                        <ul>
+                            <li>주식회사컨빌<span> | </span>Business Registration Number. 216-81-19762</li>
+                            <li>Address. 서울 강남구 압구정로8길 26 루피움빌딩<span> | </span>부산 연제구 연제로 24 부산창업허브 203호</li>
+                            <li>Email: connectvillage@convil.net<span> | </span>Tel. 010-4473-8009</li>
+                        </ul>
+                        <ul class="foot_info2">
+                            <li><br>Copyright © 2025 Convil Inc. all rights reserved</li>
+                        </ul>
+                    </div>
+                    <div class="foot_sns">
+                        <a href="https://blog.naver.com/convil_interior" target="_blank"><img src="images/ico_blog.png" alt="컨빌디자인 BLOG"></a>
+                        <a href="https://www.instagram.com/convil.design/" target="_blank"><img src="images/ico_ins.png" alt="컨빌디자인 INSTAGRAM"></a>
+                        <a href="https://www.youtube.com/@convil.interior" target="_blank"><img src="images/ico_you.png" alt="컨빌디자인 YOUTUBE채널"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+    </div>
+    <!-- wrap end -->
+</body>
+</html>
